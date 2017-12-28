@@ -62,9 +62,9 @@ export default class App extends Component {
     }
 
     removeProductConfirmed(product) {
-
-        let productList = this.state.productList;
-        productList.splice(product, 1);
+        let productList = this.state.productList.slice();
+        let index = productList.findIndex(p => p.product === product);
+        productList.splice(index, 1);
         this.setState({
             productList: productList,
         });
@@ -73,7 +73,6 @@ export default class App extends Component {
     editProduct(product) {
 
     }
-
 
     render() {
         return (
@@ -85,7 +84,7 @@ export default class App extends Component {
                     <Item rounded>
 
                         <Input placeholder={"Add Product"}
-
+                               maxLength={40}
                                value={this.state.product_input}
                                onChangeText={this._handleTextChange}
                                onFocus={() => {
@@ -97,7 +96,7 @@ export default class App extends Component {
                     </Item>
                 </View>
 
-                <Content style={{marginTop: 20}}>
+                <Content>
 
                     <ScrollView style={{marginTop: 20}}>
                         <List dataArray={this.state.productList}
