@@ -2,6 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
+    "@cubalider/resolution": "git+https://bitbucket.org/cubalider/resolution.git",
     "expo": "^24.0.0",
     "native-base": "^2.3.5",
     "react": "16.0.0",

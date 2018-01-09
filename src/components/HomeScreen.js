@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import {Container, Content, Button, Icon, Footer, FooterTab} from 'native-base';
+import Resolution from '@cubalider/resolution';
 
 class HomeScreen extends Component {
     static navigationOptions = {
@@ -20,7 +21,7 @@ class HomeScreen extends Component {
 
         return (
             <Container style={styles.container}>
-                <Content>
+                <Content scrollEnabled={false}>
                     <View style={styles.imageSection}>
                         <Image
                             style={styles.image}
